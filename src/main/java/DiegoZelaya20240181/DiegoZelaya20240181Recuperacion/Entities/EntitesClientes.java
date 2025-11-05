@@ -21,8 +21,8 @@ import java.util.List;
 public class EntitesClientes {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = " CLIENTES_SEQ")
-    @SequenceGenerator(sequenceName = " CLIENTES_SEQ", name = " CLIENTES_SEQ", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CLIENTES_SEQ")
+    @SequenceGenerator(sequenceName = "CLIENTES_SEQ", name = "CLIENTES_SEQ", allocationSize = 1)
     @Column(name = "CLIENTE_ID")
     private Long id_Clientes;
 

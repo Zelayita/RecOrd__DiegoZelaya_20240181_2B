@@ -33,8 +33,8 @@ public class ServicePedidos {
     private RepositoryProducto repoProducto;
 
     public List<DTOPedidos> getAllPedidos(){
-        List<EntitesPedidos> usuarios = repo.findAll();
-        return usuarios.stream()
+        List<EntitesPedidos> Pedidos = repo.findAll();
+        return Pedidos.stream()
                 .map(this::ConvertirADTOPedidos)
                 .collect(Collectors.toList());
     }
@@ -95,7 +95,6 @@ public class ServicePedidos {
             EntitesClientes cliente = repoCliente.findById(insertdto.getId_Cliente()).orElseThrow(() ->  new IllegalArgumentException("ID no encontrado en Clientes"));
             entity.setCliente(cliente);
         }
-
         if(insertdto.getId_Producto() != null){
             EntitesProductos Productos = repoProducto.findById(insertdto.getId_Producto()).orElseThrow(() ->  new IllegalArgumentException("ID no encontrado en Productos"));
             entity.setProducto(Productos);
